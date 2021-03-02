@@ -1,0 +1,8 @@
+.link-title {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-title:hover {
+  color: inherit;
+}

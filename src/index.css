@@ -1,0 +1,18 @@
+body {
+  background-color: #7d95b5;
+  font-family: "Montserrat", sans-serif;
+}
+
+.whole {
+  position: absolute;
+  z-index: -100;
+  width: 500px;
+  height: 700px;
+  border: 100px double #07689f;
+  transform: rotate(45deg);
+  left: -350px;
+}
+
+.bloglist {
+  padding: 0 50px;
+}
