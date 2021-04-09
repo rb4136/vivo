@@ -15,7 +15,7 @@ const BlogList = () => {
       .then((res) => setBlogList(res.data))
       .catch((err) => console.log(err))
       .then(() => setLoading(false));
-  }, [auth.token]);
+  }, [auth.token, blogList]);
 
   if (!loading) {
     blogList.sort((a, b) => new Date(a.date) - new Date(b.date)).reverse();
