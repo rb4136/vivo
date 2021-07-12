@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import BlogItem from "./BlogItem";
 import http from "../shared/http-common";
 import { AuthContext } from "../shared/auth-context";
+import LoadingSpinner from "../shared/LoadingSpinner";
 
 const BlogList = () => {
   const auth = useContext(AuthContext);
@@ -43,7 +44,7 @@ const BlogList = () => {
 
     return <div>{listOfEntries}</div>;
   } else {
-    return <div>Loading...</div>;
+    return <LoadingSpinner />;
   }
 };
 

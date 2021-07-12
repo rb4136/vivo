@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import { AuthContext } from "../shared/auth-context";
@@ -29,10 +29,10 @@ const Login = (props) => {
           auth.login(res.data.token);
           console.log("Yay! You're logged in!");
           console.log(res.data);
+          history.push("/");
         }
       })
       .catch((err) => console.log("Error is " + err));
-    history.push("/");
   };
 
   const usernameChangeHandler = (event) => {

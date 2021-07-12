@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import http from "../shared/http-common";
 import { AuthContext } from "../shared/auth-context";
+import LoadingSpinner from "../shared/LoadingSpinner";
 
 const Blog = () => {
   const auth = useContext(AuthContext);
@@ -23,14 +24,13 @@ const Blog = () => {
     return (
       <div>
         <h3>{foundBlog.title}</h3>
-        <h6>{foundBlog.date}</h6>
         <hr />
         <p>{foundBlog.content}</p>
         <button className="btn btn-outline-dark">Edit</button>
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return <LoadingSpinner />;
   }
 };
 
