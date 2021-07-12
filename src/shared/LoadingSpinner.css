@@ -2,24 +2,28 @@
   display: inline-block;
   width: 64px;
   height: 64px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .lds-dual-ring:after {
-  content: ' ';
+  content: " ";
   display: block;
   width: 46px;
   height: 46px;
   margin: 1px;
   border-radius: 50%;
-  border: 5px solid #510077;
-  border-color: #510077 transparent #510077 transparent;
+  border: 5px solid #07689f;
+  border-color: #07689f transparent #07689f transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 
 .loading-spinner__overlay {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background: rgba(255, 255, 255, 0.9);
