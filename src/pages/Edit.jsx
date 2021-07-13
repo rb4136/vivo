@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import http from "../shared/http-common";
 import { AuthContext } from "../shared/auth-context";
 import LoadingSpinner from "../shared/LoadingSpinner";
 
-const Blog = () => {
+const Edit = (props) => {
   const auth = useContext(AuthContext);
   const [foundBlog, setFoundBlog] = useState({});
   const [loading, setLoading] = useState(true);
@@ -23,12 +23,9 @@ const Blog = () => {
   if (!loading) {
     return (
       <div>
-        <h3>{foundBlog.title}</h3>
+        <h6>{foundBlog.title}</h6>
         <hr />
-        <p>{foundBlog.content}</p>
-        <Link className="nav-link" to={`${url}/edit`}>
-          <button className="btn btn-outline-dark">Edit</button>
-        </Link>
+        <p>Do you want to edit this article now?</p>
       </div>
     );
   } else {
@@ -36,4 +33,4 @@ const Blog = () => {
   }
 };
 
-export default Blog;
+export default Edit;

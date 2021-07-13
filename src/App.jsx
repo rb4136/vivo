@@ -11,6 +11,7 @@ import BlogList from "./components/BlogList";
 import Blog from "./pages/Blog";
 import Write from "./pages/Write";
 import Login from "./pages/Login";
+import Edit from "./pages/Edit";
 import { AuthContext } from "./shared/auth-context";
 import { useAuth } from "./shared/auth-hook";
 
@@ -30,8 +31,11 @@ const App = () => {
       <Route path="/login" exact>
         <Login loginHandler={login} />
       </Route>
-      <Route path="/:vivoid">
+      <Route path="/:vivoid" exact>
         <Blog />
+      </Route>
+      <Route path="/:vivoid/edit" exact>
+        <Edit />
       </Route>
       <Redirect to="/" />
     </Switch>
