@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+// import Modal from "react-modal";
 
 import { AuthContext } from "../shared/auth-context";
 import http from "../shared/http-common";
@@ -27,8 +28,7 @@ const Login = (props) => {
           console.log("That was an invalid entry.");
         } else {
           auth.login(res.data.token);
-          console.log("Yay! You're logged in!");
-          console.log(res.data);
+          console.log("Welcome back, Richard.");
           history.push("/");
         }
       })
